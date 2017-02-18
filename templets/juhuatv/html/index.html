@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="yes" name="apple-touch-fullscreen">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="telephone=no,email=no" name="format-detection">
+<meta name="renderer" content="webkit">
+<meta name="wap-font-scale" content="no">
+<meta name="applicable-device" content="pc,mobile">
+<title>{seacms:sitename}</title>
+<meta name="keywords" content="{seacms:sitenotice}" />
+<meta name="description" content="{seacms:des}" />
+{seacms:load head_include.html}
+</head>
+<body>
+{seacms:top}
+<div class="wrap">
+	<div class="indexslider slide_container clearfix mb20">
+		<ul class="rslides" id="slider">{seacms:videolist num=6 order=time commend=1,2,3,4,5 type=all} 	
+			<li>
+				<a class="alink" href="[videolist:link]">
+					<img class="lazy" src="[videolist:spic]" alt="[videolist:name]">
+					<p class="caption"><span class="sltitle">[videolist:name]</span><span class="sldes">[videolist:des]</span></p>
+				</a>
+			</li>{/seacms:videolist}	
+		</ul>
+	</div>
+    <div class="profile_info" id="wxxf">
+		<p class="profile_desc" style="color:red; font-weight:bold;">公告：避免更换网址，请关注公众号！或加群：xxxxxxxx</p>
+		<div class="profile_opr pc_none">
+			<a href="wechat/weixin.html" target="_blank" id="js_btn_add_contact" class="weui_btn weui_btn_plain_primary">进入公众号</a>
+		</div>
+    </div>
+	
+	{seacms:menulist type=1,2 }	
+	<div class="row">
+		<div class="menulist clearfix">
+			<div class="menulist-l">
+				<div class="ilist">
+				
+					<div class="stit clearfix">
+						<a class="more" href="[menulist:link]">更多</a><a class="title" href="[menulist:link]">[menulist:typename]</a>
+					</div>
+					<div class="menunav clearfix">
+						<ul>
+							{seacms:smallmenulist type=[menulist:typeid]}
+							<li><a href='[smallmenulist:link]' target="_blank">[smallmenulist:typename]</a></li>
+							{/seacms:smallmenulist}
+						</ul>
+					</div>
+				
+					
+					<ul class="ul mb_none">
+						{seacms:videolist num=10 order=weekhit type=[menulist:typeid]}
+						<li><a href="[videolist:link]"><span class="score">[videolist:time style=mm-dd]</span><span class="num">[videolist:i]</span>[videolist:name]</a></li>
+						{/seacms:videolist}
+
+				
+					</ul>
+				</div>
+			</div>
+			<div class="menulist-r">
+				<div></div>
+				<div class="list clearfix">
+					<div>                      
+						<ul>
+						{seacms:videolist num=10 order=time type=[menulist:typeid]}
+							<li>
+								<div class="li_li clearfix">
+									<div class="li_all">
+										<div class="li_img">
+											<a href="[videolist:link]"><img class="dpic dh" src="[videolist:pic]">
+											<!-- <span class="rgba2">[menulist:typename]</span> -->
+											<span class="rgba1 ba-r">
+											{if:"[videolist:note]"<>""}[videolist:note]{end if}
+											{if:[videolist:state]<>0}第[videolist:state]集{end if}
+											</span>
+											</a>
+										</div>
+										<div class="li_text">
+											<p class="name">
+												<a href="[videolist:link]">[videolist:name]</a>
+											</p>
+												<p class="actor">[videolist:nolinkactor]</p>
+										</div>
+										<a class="alink" href="[videolist:link]" title="[videolist:name]"></a>
+									</div>
+								</div>
+							</li>
+						{/seacms:videolist}	
+							
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	{/seacms:menulist}
+	{seacms:menulist type=3,4 }	
+	<div class="row">
+		<div class="menulist clearfix">
+			<div class="menulist-l">
+				<div class="ilist">
+				
+					<div class="stit clearfix">
+						<a class="more" href="[menulist:link]">更多</a><a class="title" href="[menulist:link]">[menulist:typename]</a>
+					</div>
+					<div class="menunav clearfix">
+
+					</div>
+					<ul class="ul mb_none">
+						{seacms:videolist num=12 order=weekhit type=[menulist:typeid]}
+						<li><a href="[videolist:link]"><span class="score">[videolist:score]</span><span class="num">[videolist:i]</span>[videolist:name]</a></li>
+						{/seacms:videolist}
+					</ul>
+				</div>
+			</div>
+			<div style="display:none"><a href="http://www.mayimp4.com">蚂蚁影院</a></div>
+			<div class="menulist-r">		
+				<div class="list clearfix">
+				<div>                      
+					<ul>
+					{seacms:videolist num=10 order=time type=[menulist:typeid]}
+						<li>
+							<div class="li_li clearfix">
+								<div class="li_all">
+									<div class="li_img">
+										<a href="[videolist:link]"><img class="dpic dh" src="[videolist:pic]">
+										<!-- <span class="rgba2">[menulist:typename]</span> -->
+										<span class="rgba1">
+										{if:"[videolist:note]"<>""}[videolist:note]{end if}
+											{if:[videolist:state]<>0}第[videolist:state]集{end if}
+											</span>
+										</a>
+									</div>
+									<div class="li_text">
+										<p class="name">
+											<a href="[videolist:link]">[videolist:name]</a>
+										</p>
+											<p class="actor">[videolist:nolinkactor]</p>
+									</div>
+									<a class="alink" href="[videolist:link]" title="[videolist:name]"></a>
+								</div>
+							</div>
+						</li>
+					{/seacms:videolist}	
+						
+					</ul>
+				</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	{/seacms:menulist}
+ 
+
+
+	<div class="row">
+		<div class="ndes" id="pcjq">
+			<div class="ptit mb_none">
+				<i class="gang mb_none"></i>友情链接
+			</div>
+			<div style="clear:both;"></div>
+			<div class="mb_none yqlj des_text">
+				{seacms:linklist type=font}
+				<a href="[linklist:link]" target="_blank">[linklist:name]</a>
+				{/seacms:linklist}
+			</div>
+		</div>
+	</div>
+</div>
+
+{seacms:foot}
+</body>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+<meta name="renderer" content="webkit">
+<meta name="applicable-device" content="pc,mobile">
+<title>【{playpage:publishtime}】{playpage:name}{if:"{playpage:note}"<>""}{playpage:note}{end if}{if:{playpage:state}<>0}至{playpage:state}集{end if}在线播放-{playpage:typename}-{seacms:sitename}</title>
+<meta name="keywords" content="{playpage:name}免费在线观看,{playpage:name}剧情介绍,{playpage:name}电影海报" />
+<meta name="description" content="{playpage:name}剧情:{playpage:des len=200}" />
+{seacms:load head_include.html}
+</head>
+<body>
+{seacms:top}
+<div class="wrap">
+	<div class="stit mb_none clearfix">
+		<span class="ico gang1"></span>{playpage:textlink} {if:"{playpage:nickname}"<>""}（又名：{playpage:nickname}）{end if}
+	</div>
+	<div class="row_top">
+		<div class="detail_all">
+			<div class="detail clearfix">
+				<div class="detail_name mb_none clearfix">
+					<span class="name">{playpage:name}</span><a class="fav" href="javascript:AddFav('12586','')"><img src="/pic/shoucang.png"></a>
+				</div>
+				<div class="detail_img">
+					<img class="dpic" src="{playpage:pic}">
+				</div>
+				<div class="detail_text">
+					<p class="name pc_none">
+						{playpage:name}<a class="fav" href="javascript:AddFav('12586','')"><img src="/pic/shoucangwap.png"></a>
+					</p>
+					<div class="pfstyle">
+						{playpage:mark style=star}
+					</div>
+					<div class="dlall">
+						<div class="dl clearfix">
+							<dl>
+								<dt>主演：</dt>
+								<dd>{playpage:actor} </dd>
+							</dl>
+							<dl>
+								<dt>备注：</dt>
+								<dd>{if:"{playpage:note}"<>""}{playpage:note}{end if}{if:{playpage:state}<>0}至{playpage:state}集{end if}</dd>
+							</dl>
+							<dl class="dl_left">
+								<dt>类型：</dt>
+								<dd>{playpage:jqtype} </dd>
+							</dl>
+							<dl class="dl_right mb_none">
+								<dt>导演：</dt>
+								<dd>{playpage:director} </dd>
+							</dl>
+							<dl class="dl_left">
+								<dt>年代：</dt>
+								<dd>{playpage:publishtime}</dd>
+							</dl>
+							<dl class="dl_left">
+								<dt>更新：</dt>
+								<dd>{playpage:addtime}</dd>
+							</dl>
+							<dl class="dl_right mb_none">
+								<dt>语言：</dt>
+								<dd>{playpage:lang}</dd>
+							</dl>
+						</div>
+						<dl class="mb_none">
+							<dt>评论：</dt>
+							<dd><a class="pcpldiv" href="#pldiv">我也要评论</a></dd>
+						</dl>
+						<dl class="pcjq mb_none">
+							<dt>剧情：</dt>
+							<dd>{playpage:des len=10}<a class="pcjqxx" href="#pcjq">详细</a></dd>
+						</dl>
+					</div>
+				</div>
+				<div class="pfromall mb_none">
+					<div class="bdsharebuttonbox"><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_more" data-cmd="more"></a></div>
+					<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"32"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>			
+				</div>
+			</div>
+			<div class="detail_r clearfix">
+			<img src="images/wxewm.png"/>
+			</div>
+		</div>
+	</div>
+	
+	{if:"{playpage:longtxt}"<>""}
+	<div id="stab11" class="row clearfix">
+	<div class="playlist clearfix">
+			<div class="ptit clearfix" style="padding:0 10px;">
+				<i class="ico_baidupan"></i><span style="float:left;">百度网盘下载：</span><span style="display:block;float:left;margin-left:8px;">{playpage:longtxt}</span>
+			</div>
+	
+	</div>
+	</div>
+	{end if}
+	
+	{playpage:playlist}
+	<div id="stab11" class="row clearfix">
+	
+		<div class="playlist clearfix">
+			<div class="ptit clearfix">
+				<i class="bflogo ico_[playlist:ename]"></i>[playlist:intro]
+			</div>
+			<ul class="ulli clearfix">
+				<div id="stab_11" class="stab_list">
+					<ul class="clearfix">
+						[playlist:link target=_self]
+					</ul>
+				</div>
+			</ul>
+		</div>
+	</div>
+	{/playpage:playlist}
+
+
+ {playpage:downlist}
+
+		<div class="row">
+		<div class="downlist clearfix">
+		<div class="ptit clearfix">
+		<i class="gang"></i>
+		<i class="bflogo ico_down"></i></div>
+		<ul class="downurl" id="ul[downlist:i]">
+		[downlist:link]<script>echoDown([downlist:i]);</script>
+		</ul>
+		</div>
+		</div>
+{/playpage:downlist}
+	<div class="row">
+	    <div class="ndes" id="pcjq">
+			<div class="ptit">
+				<i class="gang"></i>相关视频
+			</div>
+			<div class="channel">
+				<div class="list contentlis clearfix">
+				<ul class="cont1 clearfix">
+					
+				{seacms:videolist num=6 order=time type=current}
+					<li>
+					<div class="li_li clearfix">
+						<div class="li_all">
+							<div class="li_img">
+								<a href="[videolist:name]"><img class="dpic dh" src="[videolist:pic]">
+								<span class="rgba1">{if:"[videolist:note]"<>""}[videolist:note]{end if}
+                                        {if:[videolist:state]<>0}至[videolist:state]集{end if}
+                                        {if:[videolist:state]<>0}连载{end if}</span></a>
+							</div>
+							<div style="display:none"><a href="http://www.mayimp4.com">蚂蚁影院</a></div>
+							<div class="li_text">
+								<p class="name">
+									<a href="[videolist:link]">[videolist:name]</a>
+								</p>
+								<p class="actor">
+									[videolist:nolinkactor]
+								</p>
+							</div>
+							<a class="alink" href="[videolist:link]" title="[videolist:name]"></a>
+						</div>
+					</div>
+					</li>
+					{/seacms:videolist}
+				
+				</ul>
+				<ul class="txt-list txt-list-small clearfix">
+				
+				{seacms:videolist num=20 order=time type=current start=7}
+				
+				<li {if:[videolist:n]>10}class="mbdsnone"{end if}><span>[videolist:n].</span><a target="_blank" href="[videolist:link]">[videolist:name]</a> {if:"[videolist:note]"<>""}[videolist:note]{end if}
+                                        {if:[videolist:state]<>0}至[videolist:state]集{end if}
+                                        {if:[videolist:state]<>0}连载{end if}</li>
+				{/seacms:videolist}
+				
+				</ul>				
+				
+				
+			    </div>
+		    </div>
+	    </div>
+	</div>
+	<div class="row">
+	    <div class="ndes" id="pcjq">
+			<div class="ptit">
+				<i class="gang"></i>《{playpage:name}》内容简介
+			</div>
+				<div class="des_xy">
+				{playpage:des}喜欢看<a href="http://www.45yy.cn" target="_blank">最近好看的电影</a>请多关注本站！
+			</div>
+		</div>
+	</div>
+			<div class="pldiv" id="pldiv">
+				<!-- 多说评论框 start -->
+		<div class="ds-thread" data-thread-key="{playpage:id}" data-title="{playpage:name}" data-url="{playpage:playlink}"></div>
+		<!-- 多说评论框 end -->
+		<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+		<script type="text/javascript">
+			var duoshuoQuery = {short_name:"flttvip"};
+			(function() {
+				var ds = document.createElement('script');
+				ds.type = 'text/javascript';ds.async = true;
+				ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+				ds.charset = 'UTF-8';
+				(document.getElementsByTagName('head')[0] 
+				 || document.getElementsByTagName('body')[0]).appendChild(ds);
+			})();
+		</script>
+		<!-- 多说公共JS代码 end --> 
+			</div>
+
+			</div>
+		
+		<div class="overlay">
+		</div>
+
+{seacms:foot}
+</body>
+</html>

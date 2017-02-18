@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+<meta name="renderer" content="webkit">
+<meta name="applicable-device" content="pc,mobile">
+<title>{seacms:searchword}-{seacms:sitename}</title>
+<meta name="keywords" content="{seacms:searchword},{seacms:sitename}" />
+<meta name="description" content="{seacms:searchword},{seacms:sitename}" />
+{seacms:load head_include.html}
+</head>
+<body>
+{seacms:top}
+<div class="wrap">
+	<div class="row_top">
+		<div class="search">
+			<div class="stit clearfix">
+				<span class="typetext">与<b class="search_key">{seacms:searchword}</b>相关，为你找到了<b class="search_key">{seacms:searchnum}</b>条</span>
+			</div>
+			<div class="list clearfix">
+				<ul>{seacms:searchlist size=30 order=time type=all}
+					<li>
+					<div class="li_li clearfix">
+						<div class="li_all">
+							<div class="li_img">
+								<a href="[searchlist:link]"><img class="dpic dh" src="[searchlist:pic]"></a>
+							</div>
+							<div class="li_text">
+								<p class="name">
+									<a href="[searchlist:link]">[searchlist:name]</a>
+								</p>
+								<p>
+									<em>备注：</em>{if:"[searchlist:note]"<>""}[searchlist:note]{end if}{if:[searchlist:state]<>0}至[searchlist:state]集{end if}
+								</p>
+								<p>
+									<em>类型：</em>[searchlist:jqtype]
+								</p>
+								<p>
+									<em>主演：</em>[searchlist:nolinkactor]
+								</p>
+								<p>
+									<em>导演：</em>[searchlist:director]
+								</p>
+								<p>
+									<em>语言：</em>[searchlist:lang]
+								</p>
+								<p>
+									<em>年代：</em>[searchlist:publishtime]
+								</p>
+								<p class="des mb_none">
+									<em>简介：</em>[searchlist:des]
+								</p>
+							</div>
+						</div>
+						<a class="alink" href="[searchlist:link]" title="[searchlist:name]"></a>
+					</div>
+					</li>
+					 {/seacms:searchlist}
+				</ul>
+			</div>
+			
+		</div>
+
+            <div class="page clearfix mb_none">
+                  {if:{searchlist:page}<>1}<a href="{searchlist:firstlink}">首页</a>
+                  <a href="{searchlist:backlink}">上页</a>{end if}
+                  {searchlist:pagenumber len=7}
+                  {if:{searchlist:page}<>[pagenumber:page]}
+                  <a href="[pagenumber:link]">[pagenumber:page]</a>
+                  {else}
+                  <em class="on">[pagenumber:page]</em>
+                  {end if}
+                  {/searchlist:pagenumber}
+                  {if:{searchlist:page}<>{searchlist:pagecount}}
+                  <a href="{searchlist:nextlink}">下页</a>
+                  <a href="{searchlist:lastlink}">尾页</a>
+                  {end if}
+            </div>  
+		<div class="page clearfix pc_none">
+			<a href="{searchlist:backlink}">上一页</a>
+			<a href="{searchlist:nextlink}">下一页</a>
+			<div></div>
+		</div>
+		
+	</div>
+</div>
+
+
+<div class="overlay">
+</div>
+  
+{seacms:foot}
+</body>
+</html>

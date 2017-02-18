@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+<meta name="renderer" content="webkit">
+<meta name="applicable-device" content="pc,mobile">
+<title>{channelpage:typename} 第{channelpage:page}页-{seacms:sitename}</title>
+<meta name="keywords" content="{channelpage:typename}第{channelpage:page}页{channelpage:keywords}" />
+<meta name="description" content="{channelpage:typename}第{channelpage:page}页{channelpage:description}" />
+{seacms:load head_include.html}
+</head>
+<body>
+{seacms:top}
+<div class="wrap">
+	<div class="row">
+		<div class="case">
+		     <div class="feifan123-net">
+				<span>分类</span>
+				<div class="list_nav j-list-nav" id="j-nav-type0">
+					<ul>
+					<li class="active"><em>全部</em></li>
+                          {seacms:typecaslist}
+          <li><a href="[typecaslist:link]">[typecaslist:value]</a></li>
+                {/seacms:typecaslist}            
+                                
+                               
+					</ul>
+				</div>
+			</div>
+			<div class="feifan123-net">
+				<span>剧情</span>
+				<div class="list_nav j-list-nav" id="j-nav-type1">
+					<ul>
+						<li class="active"><em>全部</em></li>
+                         {seacms:jqcaslist}
+						<li> <a href="[jqcaslist:link]">[jqcaslist:value]</a></li>{/seacms:jqcaslist}
+					</ul>
+				</div>
+			</div>
+
+			<div class="feifan123-net">
+				<span>年代</span>
+				<div class="list_nav j-list-nav" id="j-nav-type3">
+					<ul>
+						<li class="active"><em>全部</em></li>
+                          {seacms:yearcaslist}
+          <li><a href="[yearcaslist:link]">{if:[yearcaslist:value]==more}更早{else}[yearcaslist:value]{end if}</a></li>{/seacms:yearcaslist}
+					</ul>
+				</div>
+			</div>
+			<div style="display:none"><a href="http://www.mayimp4.com">蚂蚁影院</a></div>
+			<div class="feifan123-net bb0">
+				<span>排序</span>
+				<div class="list_nav j-list-nav">
+					<ul>
+						<li class="active"><a href="{channelpage:order-time-link}">最新</a></li>
+						<li><a href="{channelpage:order-hit-link}">最热</a></li>
+						<li><a href="{channelpage:order-commend-link}">好评</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="channel">
+			<div class="list clearfix">
+				<ul>
+				{seacms:channellist size=30 order=time type=current}
+					<li>
+					<div class="li_li clearfix">
+						<div class="li_all">
+							<div class="li_img">
+								<a href="[channellist:link]">
+									<img class="dpic dh" src="[channellist:pic]">
+									<span class="rgba1">
+										{if:"[channellist:note]"<>""}[channellist:note]{end if}
+                                        {if:[channellist:state]<>0}至[channellist:state]集{end if}
+                                        {if:[channellist:state]<>0}连载{end if}
+									</span>
+								</a>
+							</div>
+							<div class="li_text">
+								<p class="name">
+									<a href="[channellist:link]">[channellist:name]</a>
+								</p>
+								<p class="actor">
+									[channellist:nolinkactor]
+								</p>
+							</div>
+							<a class="alink" href="[channellist:link]" title="[channellist:name]"></a>
+						</div>
+					</div>
+					</li>
+				{/seacms:channellist}
+				</ul>
+			</div>
+			<div class="page clearfix pc_none">
+				<a href="{channellist:backlink}">上一页</a>
+				<a href="{channellist:nextlink}">下一页</a>
+				<div></div>
+			</div>
+			
+            <div class="page clearfix mb_none">
+                  <a href="{channellist:firstlink}">首页</a>{if:{channellist:page}<>1}
+                  <a href="{channellist:backlink}">上页</a>{end if}
+                  {channellist:pagenumber len=7}
+                  {if:{channellist:page}<>[pagenumber:page]}
+                  <a href="[pagenumber:link]">[pagenumber:page]</a>
+                  {else}
+                  <em class="on">[pagenumber:page]</em>
+                  {end if}
+                  {/channellist:pagenumber}
+                  {if:{channellist:page}<>{channellist:pagecount}}
+                  <a href="{channellist:nextlink}">下页</a>{end if}
+                  <a href="{channellist:lastlink}">尾页</a>
+                  
+            </div> 			
+		</div> 	
+	</div> 		
+			
+</div>
+
+
+{seacms:foot}
+</body>
+
+</html>

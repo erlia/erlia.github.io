@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+<meta name="renderer" content="webkit">
+<meta name="applicable-device" content="pc,mobile">
+<title>正在在线播放 {playpage:name} {playpage:part}</title>
+<meta name="Keywords" content="{playpage:name}{playpage:part}免费在线观看,{playpage:name}剧情介绍,{playpage:name}数据海报" />
+<meta name="description" content="{playpage:name}{playpage:part}免费在线观看,{playpage:name}剧情介绍,{playpage:name}数据海报" />
+{seacms:load head_include.html}
+<script src="/{seacms:sitepath}js/play.js"></script>
+<script>var playn='{playpage:name}', playp='{playpage:part}';</script>
+</head>
+<body>
+{seacms:top}
+<div class="wrap">
+	<div class="stit mb_none clearfix">
+		<span class="ico gang1"></span>
+		{playpage:textlink}
+	</div>
+	<div class="row_top">
+		<div class="playerall">
+			<div class="player">
+				{playpage:playurlinfo}{playpage:player}
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="pfplayer clearfix">
+			<div class="ppfstyle">
+				{playpage:mark style=star}
+			</div>
+			<div class="dc">
+				<span id="digg_num">{playpage:diggnum}</span><a  href="javascript:viod()" onClick="diggVideo({playpage:id},'digg_num')">顶一下</a>
+				<span id="digg_num">{playpage:treadnum}</span><a  href="javascript:viod()" onClick="diggVideo({playpage:id},'tread_num')">踩一下</a>
+			</div>
+		</div>
+	</div>
+	{playpage:playlist}
+	<div id="stab11" class="row clearfix">
+	
+		<div class="playlist clearfix">
+			<div class="ptit clearfix">
+				<i class="bflogo ico_[playlist:ename]"></i>[playlist:intro]
+			</div>
+			<ul class="ulli clearfix">
+				<div id="stab_11" class="stab_list">
+					<ul class="clearfix">
+						[playlist:link target=_self]
+					</ul>
+				</div>
+			</ul>
+		</div>
+	</div>
+	{/playpage:playlist}
+	
+	
+	<div class="row">
+	    <div class="ndes" id="pcjq">
+			<div class="ptit">
+				<i class="gang"></i>相关视频
+			</div>
+			<div class="channel">
+				<div class="list contentlis clearfix">
+				<ul class="cont1 clearfix">
+					
+				{seacms:videolist num=6 order=time type=current}
+					<li>
+					<div class="li_li clearfix">
+						<div class="li_all">
+							<div class="li_img">
+								<a href="[videolist:name]"><img class="dpic dh" src="[videolist:pic]">
+								<span class="rgba1">{if:"[videolist:note]"<>""}[videolist:note]{end if}
+                                        {if:[videolist:state]<>0}至[videolist:state]集{end if}
+                                        {if:[videolist:state]<>0}连载{end if}</span></a>
+							</div>
+							<div class="li_text">
+								<p class="name">
+									<a href="[videolist:link]">[videolist:name]</a>
+								</p>
+								<p class="actor">
+									[videolist:nolinkactor]
+								</p>
+							</div>
+							<a class="alink" href="[videolist:link]" title="[videolist:name]"></a>
+						</div>
+					</div>
+					</li>
+					{/seacms:videolist}
+				
+				</ul>
+			    </div>
+		    </div>
+	    </div>
+	</div>
+	
+	<div class="row">
+	    <div class="ndes" id="pcjq">
+			<div class="ptit">
+				<i class="gang"></i>《{playpage:name}》内容简介
+			</div>
+				<div class="des_xy">
+				<a href="http://www.45yy.cn" target="_blank">好看的电影推荐</a>请多关注本站！{playpage:des}
+			</div>
+		</div>
+	</div>
+			<div class="pldiv" id="pldiv">
+				<!-- 多说评论框 start -->
+		<div class="ds-thread" data-thread-key="{playpage:id}" data-title="{playpage:name}" data-url="{playpage:playlink}"></div>
+		<!-- 多说评论框 end -->
+		<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+		<script type="text/javascript">
+			var duoshuoQuery = {short_name:"flttvip"};
+			(function() {
+				var ds = document.createElement('script');
+				ds.type = 'text/javascript';ds.async = true;
+				ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+				ds.charset = 'UTF-8';
+				(document.getElementsByTagName('head')[0] 
+				 || document.getElementsByTagName('body')[0]).appendChild(ds);
+			})();
+		</script>
+		<!-- 多说公共JS代码 end --> 
+			</div>
+</div>
+	<div class="overlay">
+	</div>
+
+{seacms:foot}
+</body>
+</html>

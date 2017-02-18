@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+<meta name="renderer" content="webkit">
+<meta name="applicable-device" content="pc,mobile">
+<title>{seacms:sitename}-高级搜索</title>
+<meta name="keywords" content="{seacms:searchword},{seacms:sitename}" />
+<meta name="description" content="{seacms:searchword},{seacms:sitename}" />
+{seacms:load head_include.html}
+</head>
+<body>
+{seacms:top}
+<div class="wrap">
+	<div class="row">
+		<div class="case">
+			<div class="feifan123-net">
+				<span>分类</span>
+				<div class="list_nav j-list-nav" id="j-nav-type0">
+					<ul>
+                    {seacms:typeitemlist}
+						<li {if:[typeitemlist:value]=={searchpage:typename}} class="active"{end if}><a href="[typeitemlist:link]">[typeitemlist:value]</a></li>
+					{/seacms:typeitemlist}
+					</ul>
+				</div>
+			</div>
+			<div class="feifan123-net">
+				<span>剧情</span>
+				<div class="list_nav j-list-nav" id="j-nav-type1">
+					<ul>
+                        {seacms:jqitemlist}
+						<li {if:[jqitemlist:value]=={searchpage:jq}} class="active"{end if}><a href="[jqitemlist:link]">[jqitemlist:value]</a></li>
+						{/seacms:jqitemlist}
+					</ul>
+				</div>
+			</div>
+
+			<div class="feifan123-net">
+				<span>年代</span>
+				<div class="list_nav j-list-nav" id="j-nav-type3">
+					<ul>
+						{seacms:yearitemlist}
+                         
+						  <li  {if:[yearitemlist:value]=={searchpage:year}} class="active"{end if}><a href="[yearitemlist:link]">{if:[yearitemlist:value]==more}更早{else}[yearitemlist:value]{end if}</a></li>
+						
+						{/seacms:yearitemlist}
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="channel">
+			<div class="list clearfix">
+				<ul>{seacms:cascadelist size=30 order=time type=current}
+					<li>
+						<div class="li_li clearfix">
+							<div class="li_all">
+								<div class="li_img">
+									<a href="[cascadelist:link]">
+										<img class="dpic dh" src="[cascadelist:pic]">
+										<span class="rgba1">
+											{if:"[cascadelist:note]"<>""}[cascadelist:note]{end if}
+                                            {if:[cascadelist:state]<>0}至[cascadelist:state]集{end if}
+                                            {if:[cascadelist:state]<>0}连载{end if}
+										</span>
+									</a>
+								</div>
+								<div class="li_text">
+									<p class="name">
+										<a href="[cascadelist:link]">[cascadelist:name]</a>
+									</p>
+									<p class="actor">
+										[cascadelist:nolinkactor]
+									</p>
+								</div>
+								<a class="alink" href="[cascadelist:link]" title="[cascadelist:name]"></a>
+							</div>
+						</div>
+					</li>
+					{/seacms:cascadelist}
+				</ul>
+			</div>
+		</div>		
+			
+			
+		<div class="page clearfix mb_none">
+			  {if:{cascadelist:page}<>1}<a href="{cascadelist:firstlink}">首页</a>
+			  <a href="{cascadelist:backlink}">上页</a>{end if}
+			  {cascadelist:pagenumber len=7}
+			  {if:{cascadelist:page}<>[pagenumber:page]}
+			  <a href="[pagenumber:link]">[pagenumber:page]</a>
+			  {else}
+			  <em class="on">[pagenumber:page]</em>
+			  {end if}
+			  {/cascadelist:pagenumber}
+			  {if:{cascadelist:page}<>{cascadelist:pagecount}}
+			  <a href="{cascadelist:nextlink}">下页</a>
+			  <a href="{cascadelist:lastlink}">尾页</a>
+			  {end if}
+		</div>	
+
+		<div class="page clearfix pc_none">
+			<a href="{cascadelist:backlink}">上一页</a>
+			<a href="{cascadelist:nextlink}">下一页</a>
+			<div></div>
+		</div>
+</div>
+
+{seacms:foot}
+</body>
+</html>

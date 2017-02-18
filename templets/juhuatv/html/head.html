@@ -1,0 +1,108 @@
+<div id="pgcontainer">
+	<div class="header">
+		<div class="head clearfix">
+			<div class="logo">
+				<a class="logobg" href="/"></a>
+			</div>
+			{seacms:menulist type=1,2}
+			<div class="nav mb_none">
+				<span class="nav_name"><a class="curjs cur"><span class="ttname">[menulist:typename]</span><i class="ico arrow"></i></a>
+				<div class="nav_down clearfix">
+					<div class="nav_1000">
+						<ul>
+						{seacms:smallmenulist type=[menulist:typeid]}						
+						<li><a href='[smallmenulist:link]' target="_blank">[smallmenulist:typename]</a></li>						
+						{/seacms:smallmenulist}
+						</ul>
+					</div>
+				</div>
+				</span>
+			</div>
+			{/seacms:menulist}
+			<div class="nav_other mb_none">
+				<ul class="clearfix">
+					{seacms:menulist type=3,4}
+					<li><a href="[menulist:link]" target="_blank">[menulist:typename]</a></li>
+					{/seacms:menulist}	
+					<li><a href="/gbook.php">留言</a></li>
+				</ul>
+			</div>
+			<div class="user mb_none">
+				<a class="ico user_bg" href="/member.php"></a>
+			</div>
+			<div class="nav_history mb_none aa">
+				<span class="drop-down nav-item bb" id="nav-looked">
+					<a href="javascript:void(0)" onMouseOver="$MH.showHistory(1);" class="nav-link drop-title">观看历史</a>
+					<div class="cc">
+					  <script type="text/javascript" src="images/history.js"></script>
+					  <script type="text/javascript">$MH.limit = 10;
+						$MH.WriteHistoryBox(180, 170, 'font');
+						$MH.recordHistory({
+						  name: '{playpage:name}',
+						  link: '{playpage:url}',
+						  pic: '{playpage:pic}'
+						})</script>
+					</div>
+				</span>
+			</div>
+			<div class="searchput mb_none">
+				<form name="formsearch" id="formsearch" action='/search.php' method="post" target="_self" autocomplete="off">
+					<div class="input_all clearfix">
+						<div class="input_input">
+							<input class="input" name="searchword" type="text" id="keyword" placeholder="输入关键词"/>
+						</div>
+						<div class="imgbt_imgbt">
+							<input class="ico imgbt" type="submit" value="">
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="menubtn pc_none">
+				<i class="ico menubtn_bg"></i>
+			</div>
+			<div class="mb_search pc_none">
+				<i class="ico searchbtn_bg"></i>
+			</div>
+			<div class="search_hover">
+				<form name="formsearch" id="formsearch" action='/search.php' method="post" target="_self" autocomplete="off">
+					<div class="sh1">
+						<div class="inputall">
+							<div class="input_1">
+								<div class="input_2">
+									<input class="input" name="searchword" type="text" id="keyword" placeholder="输入关键词"/>
+								</div>
+							</div>
+							<div class="imgbt_1">
+								<input class="ico imgbt" type="submit" value="">
+							</div>
+						</div>
+					</div>
+					<div class="gb1">
+						取消
+					</div>
+				</form>
+			
+			</div>
+		</div>
+	</div>
+	<div id="menu_right" class="menu_right">
+		
+		<div class="nav_title">
+			<ul class="mb_name">
+				<li><a class="ico a_ico" >{seacms:sitename}</a></li>
+			</ul>
+			<ul class="nav_ul clearfix">
+			{seacms:menulist type=all}
+			<li><a href="[menulist:link]">[menulist:typename]</a></li>
+			{/seacms:menulist}		
+			</ul>
+		</div>
+	
+		<div class="mb_other">
+			<ul class="nav_ul">
+				<li><a class="ico a_ico" href="/gbook.php">留言</a></li>
+				<li><a class="ico a_ico" href="/member.php">会员中心</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
