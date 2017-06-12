@@ -6,13 +6,11 @@ document.getElementById("video_iframe").src ="http://ww3.sinaimg.cn/large/006Bo8
 }
 function Tip()
 {
-alert("点提交视频地址之后，按Alt+数字1-3就能播放了呀")
 }
 function Keytest(event)
 {
 if(event.keyCode==13)
 {
-alert("点提交视频地址之后，按All+数字1-3就能播放了呀")
 };
 if(event.keyCode==18)
 {
@@ -20,24 +18,9 @@ num=1
 };
 if (num==1)
 {
-if(event.keyCode==49|event.keyCode==97)
-{var link = document.getElementById('link').value;
-document.getElementById("video_iframe").src ='http://www.wmxz.wang/video.php?url=' + link;
-num=0;
-}
-
-if(event.keyCode==50|event.keyCode==98)
-{var link = document.getElementById('link').value;
+var link = document.getElementById('link').value;
 document.getElementById("video_iframe").src ='http://api.47ks.com/webcloud/?v=' + link;
 num=0;
-}
-
-if(event.keyCode==51|event.keyCode==99)
-{var link = document.getElementById('link').value;
-document.getElementById("video_iframe").src ='http://www.vipjiexi.com/yun.php?url=' + link;
-num=0;
-}
-}
 
 }
 
