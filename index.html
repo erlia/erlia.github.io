@@ -6,24 +6,9 @@ document.getElementById("video_iframe").src ="";
 }
 function Tip()
 {
-alert("点提交视频地址之后，按Alt+数字1-3就能播放了呀")
-}
-function Keytest(event)
-{
-if(event.keyCode==13)
-{
-alert("点提交视频地址之后，按All+数字1-3就能播放了呀")
-};
-if(event.keyCode==18)
-{
-num=1
-};
 var link = document.getElementById('link').value;
 document.getElementById("video_iframe").src ='http://api.47ks.com/webcloud/?v=' + link;
-num=0;
 }
-
-
 </script>
 </head>
 
